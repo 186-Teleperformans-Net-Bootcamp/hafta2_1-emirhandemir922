@@ -1,9 +1,13 @@
 using Teleperformance._2.StockManagement;
 using Teleperformance._2.EntityDB;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
-
+builder.Services.AddDbContext<EntityDBContext>(options =>
+    options.UseSqlServer(configuration.GetConnectionString("Default"))
+);
 
 // Add services to the container.
 builder.Services.AddRazorPages();

@@ -4,8 +4,7 @@
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string profession { get; set; }
-        public ICollection<Student> Students { get; set; }
-        public Class Class { get; set; }
+        public Course course { get; set; }
+        public School school { get; set; }
     }
 }
